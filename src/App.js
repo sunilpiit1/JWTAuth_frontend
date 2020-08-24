@@ -18,16 +18,21 @@ function App() {
         <Navbar />
         <div className="upper">
           <Route path="/" exact component={Home}></Route>
-          <Route path="/signup" component={Signup}></Route>
-          <Route path="/login" component={Login}></Route>
-          <Route path="/topics" component={Topic}></Route>
-          <Route path="/create" component={Create}></Route>
-          <Route path="/allarticles/:topic_id" component={AllArticles}></Route>
+          <Route path="/signup" exact component={Signup}></Route>
+          <Route path="/login" exact component={Login}></Route>
+          <Route path="/topics" exact component={Topic}></Route>
+          <Route path="/create" exact component={Create}></Route>
+          <Route
+            path="/allarticles/:topic_id"
+            exact
+            component={AllArticles}
+          ></Route>
           <Route
             path="/article/:topic_id/create"
             component={AddArticle}
+            exact
           ></Route>
-          <Route path="/article/:article_id" component={Article}></Route>
+          <Route path="/article/:article_id" component={Article} exact></Route>
         </div>
       </div>
     </Router>
