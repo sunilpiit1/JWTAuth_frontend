@@ -25,7 +25,8 @@ export class login extends Component {
           console.log(res.data);
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", res.data.user);
-          window.location = "/topics";
+          window.location.href =
+            "https://competent-dubinsky-c1d8ad.netlify.app/topics";
         }
       })
       .catch((err) => console.log(err));
