@@ -1,14 +1,11 @@
 import React from "react";
 import "./SingleTopic.css";
+import { Link } from "react-router-dom";
 
 function SingleTopic(props) {
-  const onClickHandler = () => {
-    window.location = `/allarticles/${props.id}`;
-  };
+  const view = `/allarticles/${props.id}`;
 
-  const addArticle = () => {
-    window.location = `article/${props.id}/create`;
-  };
+  const create = `article/${props.id}/create`;
 
   return (
     <div className="singletopic">
@@ -19,12 +16,13 @@ function SingleTopic(props) {
         className="topicimage"
       ></div>
       <div className="buttons">
-        <button className="btn btn-primary primary" onClick={onClickHandler}>
-          All Articles
-        </button>
-        <button className="btn btn-warning" onClick={addArticle}>
-          Create Article
-        </button>
+        <Link to={view}>
+          {" "}
+          <button className="btn btn-primary primary">All Articles</button>
+        </Link>
+        <Link to={create}>
+          <button className="btn btn-warning">Create Article</button>
+        </Link>
       </div>
       <h6 className="last">Topic id : {props.id}</h6>
       <h5 className="last">Created by</h5>

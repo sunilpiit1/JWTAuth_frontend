@@ -1,5 +1,6 @@
 import React from "react";
 import "./SingleArticle.css";
+import { Link } from "react-router-dom";
 
 function SingleArticle(props) {
   let link = `/article/${props.id}`;
@@ -19,9 +20,9 @@ function SingleArticle(props) {
 
           <h6 className="styleHeading">Is featured : {props.isFeatured}</h6>
         </div>
-        <a className="readmore1" href={link}>
+        <Link className="readmore1" to={link}>
           Read More ....
-        </a>
+        </Link>
       </div>
     </div>
   );

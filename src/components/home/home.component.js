@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.component.css";
+import { Link } from "react-router-dom";
 
 export default function home() {
   return (
@@ -10,9 +11,9 @@ export default function home() {
       </h3>
       <h5>You need to login to create articles and topics</h5>
       <button className="btn btn-primary linkbutton">
-        <a className="blogslink" href="/blogs">
+        <Link className="blogslink" to="/topics">
           see Topics
-        </a>{" "}
+        </Link>
       </button>
     </div>
   );
